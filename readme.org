@@ -1,13 +1,13 @@
-* Requirements
+* Requirements.
   In order to run the application you need to make sure that the following are already installed.
   - Java 8 or higher.
-  - node
+  - node.
 
-* Running application
+* Running application.
   To run the application you will have to do the following:
   - Run ~npx shadow-cljs watch app~ to build and run application with watcher.
 
-* Configuring shadow-cljs
+* Configuring shadow-cljs.
 This section explains import build configs.
 
 #+BEGIN_SRC emacs_lips
@@ -48,3 +48,5 @@ This section explains import build configs.
     - ~:preloads~ used to load a set of namespaces before loading the application. Good for hooking in devtools.
     - ~:http-port~ describes the port the server should run int.
     - ~:http-root~ provides the root directory for the server. This is the path for ~/~.
+
+* Getting Started with Reagent.
