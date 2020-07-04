@@ -4,15 +4,16 @@
 This section explains import build configs.
 
 #+BEGIN_SRC emacs_lips
-{:app {:target     :browser
-                :output-dir "public/js"
-                :asset-path "/js"
-                :modules    {:main {:entries [chorify.core]}}
+{:app {:target       :browser
+       :output-dir   "public/js"
+       :asset-path   "/js"
+       :modules      {:main {:entries [chorify.core]}}
 
 
-                :devtools {:preloads  []
-                           :http-port 8021
-                           :http-root "public"}}}
+       :devtools     {:repl-init-ns cljs.user
+                      :preloads  []
+                      :http-port 8021
+                      :http-root "public"}}}
 #+END_SRC
 
 *** :target
@@ -21,7 +22,7 @@ This section explains import build configs.
 *** :output-dir
     This is the directory that all the transpiled sources will be placed.
 
-*** assest-path 
+*** :assest-path 
     This is the relative path from the webserver's root which will contain content for output-dir.
 
 *** :modules
@@ -32,3 +33,11 @@ This section explains import build configs.
     - ~:init-fn~ fully qualified symbol pointing to a function that should be ran when this module is loaded.
     - for a list of all possible configs check out: https://shadow-cljs.github.io/docs/UsersGuide.html#_modules .
 
+*** :devtools
+    This configures development tools supported by the ~:target~ for each build.
+
+    - ~:repl-init-ns~ configures which namespace to start in. The default is ~cljs.user~.
+    - ~:repl-pprint~ when set to true, it makes repl use ~cljs.pprint~ instead of ~pr-str~ when printing eval-results
+    - ~:preloads~ used to load a set of namespaces before loading the application. Good for hooking in devtools.
+    - ~:http-port~ describes the port the server should run int.
+    - ~:http-root~ provides the root directory for the server. This is the path for "/".
