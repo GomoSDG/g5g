@@ -17,10 +17,11 @@ This section explains import build configs.
        :modules      {:main {:entries [g5g.core]}}
 
 
-       :devtools     {:repl-init-ns cljs.user
-                      :preloads  []
-                      :http-port 8021
-                      :http-root "public"}}}
+       :devtools     {:repl-init-ns  cljs.user
+                      :preloads      []
+                      :http-port     8021
+                      :http-root     "public"
+                      :after-load    g5g.core/init}}}
 #+END_SRC
 
 *** :target
@@ -48,5 +49,9 @@ This section explains import build configs.
     - ~:preloads~ used to load a set of namespaces before loading the application. Good for hooking in devtools.
     - ~:http-port~ describes the port the server should run int.
     - ~:http-root~ provides the root directory for the server. This is the path for ~/~.
+    - ~:after-load~ fully qualified symbol for the function to execute after load. Works well for hot reload.
 
 * Getting Started with Reagent.
+To render your html you need to run the function ~reagent.dom/render~ which takes a vector of the
+the function to render and the element to render the function on. This is usually
+~(.getElementById js/document "app")~ where ~app~ is the id of the element to render in.
