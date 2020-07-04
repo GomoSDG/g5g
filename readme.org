@@ -1,3 +1,12 @@
+* Requirements
+  In order to run the application you need to make sure that the following are already installed.
+  - Java 8 or higher.
+  - node
+
+* Running application
+  To run the application you will have to do the following:
+  - Run ~npx shadow-cljs watch app~ to build and run application with watcher.
+
 * shadow-cljs crash course
 
 ** Config
@@ -5,9 +14,9 @@ This section explains import build configs.
 
 #+BEGIN_SRC emacs_lips
 {:app {:target       :browser
-       :output-dir   "public/js"
+       :output-dir   "public/js" 
        :asset-path   "/js"
-       :modules      {:main {:entries [chorify.core]}}
+       :modules      {:main {:entries [g5g.core]}}
 
 
        :devtools     {:repl-init-ns cljs.user
