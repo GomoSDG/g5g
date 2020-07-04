@@ -1,0 +1,34 @@
+* shadow-cljs crash course
+
+** Config
+This section explains import build configs.
+
+#+BEGIN_SRC emacs_lips
+{:app {:target     :browser
+                :output-dir "public/js"
+                :asset-path "/js"
+                :modules    {:main {:entries [chorify.core]}}
+
+
+                :devtools {:preloads  []
+                           :http-port 8021
+                           :http-root "public"}}}
+#+END_SRC
+
+*** :target
+    This config explains which platform shadow-cljs should target. If you are building a web-app, you should target browser.
+
+*** :output-dir
+    This is the directory that all the transpiled sources will be placed.
+
+*** assest-path 
+    This is the relative path from the webserver's root which will contain content for output-dir.
+
+*** :modules
+    A map that configures how compiled sources are bundled together. Each key-value pair explains how a ~.js~ file will be bundled. The key will be the file name. The value is a map that describes the bundle.
+
+    The following keys describe the map that describes the bundle:
+    - ~:entries~ the entry namespace e.g. ~g5g.core~
+    - ~:init-fn~ fully qualified symbol pointing to a function that should be ran when this module is loaded.
+    - for a list of all possible configs check out: https://shadow-cljs.github.io/docs/UsersGuide.html#_modules .
+
