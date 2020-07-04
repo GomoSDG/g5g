@@ -1,0 +1,9 @@
+{
+  "name": "web",
+  "version": "0.0.1",
+  "private": true,
+  "devDependencies": {
+    "shadow-cljs": "2.10.14"
+  },
+  "dependencies": {}
+}
