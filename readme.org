@@ -40,4 +40,4 @@ This section explains import build configs.
     - ~:repl-pprint~ when set to true, it makes repl use ~cljs.pprint~ instead of ~pr-str~ when printing eval-results
     - ~:preloads~ used to load a set of namespaces before loading the application. Good for hooking in devtools.
     - ~:http-port~ describes the port the server should run int.
-    - ~:http-root~ provides the root directory for the server. This is the path for "/".
+    - ~:http-root~ provides the root directory for the server. This is the path for ~/~.
