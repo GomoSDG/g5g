@@ -5,7 +5,8 @@
   "src/test"]
 
  :dependencies
- []
+ [;; https://https://reagent-project.github.io/
+  [reagent/reagent "0.10.0"]]
 
  :builds
  {:app {:target     :browser
@@ -18,4 +19,5 @@
         :devtools {:repl-init-ns cljs.user
                    :preloads     []
                    :http-port    8021
-                   :http-root    "public"}}}}
+                   :http-root    "public"
+                   :after-load   g5g.core/init}}}}
