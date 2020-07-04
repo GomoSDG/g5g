@@ -7,9 +7,7 @@
   To run the application you will have to do the following:
   - Run ~npx shadow-cljs watch app~ to build and run application with watcher.
 
-* shadow-cljs crash course
-
-** Config
+* Configuring shadow-cljs
 This section explains import build configs.
 
 #+BEGIN_SRC emacs_lips
