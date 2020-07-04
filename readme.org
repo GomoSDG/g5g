@@ -55,3 +55,34 @@ This section explains import build configs.
 To render your html you need to run the function ~reagent.dom/render~ which takes a vector of the
 the function to render and the element to render the function on. This is usually
 ~(.getElementById js/document "app")~ where ~app~ is the id of the element to render in.
+
+For more information go to https://http://reagent-project.github.io/docs/master/reagent.dom.html .
+
+* Understanding Secretary
+Secretery is used for routing in single webpage applications. To get started, you will need to get the
+~defroute~ macro using ~[secretary.core :as secretary :refer-macros [defroute]]~. You will need to use 
+~:refer-macros~ because ~:refer~ does not import macros.
+
+~defroute~ takes parameters ~route name~, ~route matcher~, ~destruct~ and ~route action~.
+
+- ~route name~ is the name of the route e.g. ~home~.
+- ~route matcher~ is the path for the route e.g. ~/~.
+- ~destruct~ used to get path params from the route. You can always get away with ~{:as params}~.
+- ~route action~ the action that should be done when the route is activated.
+
+For more information on destructuring and query-params go to https://github.com/clj-commons/secretary#parameter-destructuring
+
+* Understanding re-frame
+~re-frame~ is a state management library. To get started you need to be able ~re-frame.core/dispatch~,
+~re-frame.core/reg-sub~ and ~re-frame.core/reg-event-db~.
+
+- ~dispatch~ dispatches an event provided as ~[<id> ...]~.
+- ~reg-sub~ registers a subscription name that will get a certain value from db.
+- ~reg-event-db~ registers and event handler that will process event and update the db. signature
+is ~(db event) -> db~.
+
+
+
+* Attaching Views to Routes.
+
+
