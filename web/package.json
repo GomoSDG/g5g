@@ -3,9 +3,12 @@
   "version": "0.0.1",
   "private": true,
   "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.1.0",
     "shadow-cljs": "2.10.14"
   },
   "dependencies": {
+    "bootstrap": "^4.5.0",
     "react": "16.13.0",
     "react-dom": "16.13.0"
   }
