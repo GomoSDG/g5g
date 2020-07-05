@@ -78,11 +78,26 @@ For more information on destructuring and query-params go to https://github.com/
 
 - ~dispatch~ dispatches an event provided as ~[<id> ...]~.
 - ~reg-sub~ registers a subscription name that will get a certain value from db.
-- ~reg-event-db~ registers and event handler that will process event and update the db. signature
-is ~(db event) -> db~.
-
-
+- ~reg-event-db~ registers and event handler that will process event and update the db. signature is ~(db event) -> db~.
 
 * Attaching Views to Routes.
+A map of panels is kept to keep track of all panels in the app. This map is then added to the db under
+key ~:panels~. A key ~:active-panel~ then keeps the key of the active panel. The active panel function
+is then retrieved by running ~(@panels @active-panel)~ where ~@panels~ is a subscription to ~:panels~
+and ~@active-panel~ is a subscription to ~:active-panel~. The map of panels can be found in ~g5g.views~.
 
+The active panel is set by dispatching the event ~:set-active-panel~ with the key to the panel desired.
+This happens in ~g5g.routes~.
 
+* Understanding Gulp
+Gulp has many uses. For this project Gulp is used to compile the sass files to css. This session explains all you need to know to get started.
+
+For more information please see .
+
+To get started, make sure that you have ~gulp~ and ~gulp-sass~ installed as dev dependencies in your project. In your project directory, you will need to make sure that there is a file ~gulpfile.js~.
+This file will contain all your gulp tasks for your project.
+
+For more information look at the following links:
+- https://css-tricks.com/gulp-for-beginners/
+- https://gulpjs.com/docs/en/api/series/
+- https://gulpjs.com/docs/en/api/watch/
