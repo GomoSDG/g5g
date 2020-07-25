@@ -4,10 +4,11 @@ frontend:
     preBuild:
       commands:
         - cd web
-        - npm install
     # IMPORTANT - Please verify your build commands
     build:
       commands:
+        - npm install
+        - gulp sass
         - shadow-cljs release app
   artifacts:
     # IMPORTANT - Please verify your build output directory
