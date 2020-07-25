@@ -4,10 +4,11 @@ frontend:
     preBuild:
       commands:
         - cd web
+        - jave -version
     # IMPORTANT - Please verify your build commands
     build:
       commands:
-        - npx shadow-cljs release app
+        - shadow-cljs release app
   artifacts:
     # IMPORTANT - Please verify your build output directory
     baseDirectory: /web/public
