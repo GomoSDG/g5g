@@ -4,7 +4,6 @@ frontend:
     preBuild:
       commands:
         - cd web
-        - jave -version
         - who
     # IMPORTANT - Please verify your build commands
     build:
