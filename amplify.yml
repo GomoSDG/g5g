@@ -8,8 +8,7 @@ frontend:
     build:
       commands:
         - npm install
-        - gulp sass
-        - shadow-cljs release app
+        - npm run release
   artifacts:
     # IMPORTANT - Please verify your build output directory
     baseDirectory: /web/public

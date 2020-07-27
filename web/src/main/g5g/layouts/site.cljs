@@ -12,5 +12,4 @@
 
 (defn site-layout [panel]
   [:<>
-   [navbar]
-   [panel]])
+    [panel]])

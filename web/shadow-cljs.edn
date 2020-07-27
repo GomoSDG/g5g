@@ -13,7 +13,7 @@
  :builds
  {:app {:target     :browser
         :output-dir "public/js"
-        :asset-path "/js"
+        :asset-path "/"
         :modules    {:main {:entries [g5g.core]
                             :init-fn g5g.core/init}}
 

@@ -1,6 +1,10 @@
 // Required
-@import "node_modules/bootstrap/scss/bootstrap";
+@import "node_modules/bulma/bulma";
 
 html, body {
     margin: 0;
+}
+
+.hero {
+    background: url(/img/cover.jpg)
 }
