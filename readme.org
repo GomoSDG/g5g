@@ -1,3 +1,5 @@
+Project was created to help put together a resource for getting started with ClojureScript UI stuff.
+
 * Requirements.
   In order to run the application you need to make sure that the following are already installed.
   - Java 8 or higher.
